@@ -39,6 +39,7 @@ const PersonCard  = props => {
                 </div>
                 <input type="submit" value="Create User" />
             </form>
+
             <div>
                 <h3> {username} </h3>
                 <h3> {password} </h3>

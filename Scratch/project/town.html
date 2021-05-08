@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrow Functions</title>
+</head>
+<body id="body">
+    <div>
+        <form onSubmit={ createUser }>
+            <div>
+                <label>First Name: </label> 
+                <input type="text" onChange={ (e) => setFirstname(e.target.value) } />
+            </div>
+            <div>
+                <label>Last Name: </label>
+                <input type="text" onChange={ (e) => setLastname(e.target.value) } />
+            </div>
+            <div>
+                <label>Email: </label> 
+                <input type="text" onChange={ (e) => setEmail(e.target.value) } />
+            </div>
+            <div>
+                <label>Password: </label> 
+                <input type="text" onChange={ (e) => setPassword(e.target.value) } />
+            </div>
+            <div>
+                <label>Confirm Password: </label> 
+                <input type="text" onChange={ (e) => setConfirmPassword(e.target.value) } />
+            </div>
+            <input type="submit" value="Create User" />
+        </form>
+        <div>
+    <p onmouseover="mouseOverFunction(this)">
+        Another task: This should be another feature. 
+        I want to click anywhere in this paragraph tag and I want to be able to change the background color to whatever is in this input: <input type="text"/>.
+    </p>
+    <script>
+        document.getElementById("button").onclick = function() {
+            setBackgroundColorById("paragraph", "blue");
+        }
+        document.getElementById("alert").onclick = function(){
+            alert(document.getElementById("popup-input").value);
+        }
+        document.getElementById("hover-this").onmouseover = function(){
+            setBackgroundColorById("body", "red");
+        }
+        document.getElementById("hover-this").onmouseout = function(){
+            setBackgroundColorById("body", "white");
+        }
+        function getValueFromId(id){
+            return document.getElementById(id).value;
+        }
+        function setBackgroundColorById(id, color){
+            document.getElementById(id).style = "background-color: " + color;
+        }
+        function mouseOverFunction(el){
+            el.style = "background-color: black";
+        }
+    </script>
+</body>
+</html>
