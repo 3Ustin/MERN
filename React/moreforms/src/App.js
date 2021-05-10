@@ -1,13 +1,12 @@
+import Login from './components/Login';
 import './App.css';
-import PersonCard from './components/PersonCard';
 
 function App() {
   return (
     <div className="App">
-      <PersonCard/>
+      <Login/>
     </div>
   );
 }
 
 export default App;
-

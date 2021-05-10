@@ -1,16 +1,26 @@
 import React, { Component, useState } from 'react';
 
-const PersonCard  = props => {
+const Login  = props => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
+    const [userValid, setUserValid] = useState(true);
+    const [passValid, setPassValid] = useState(true);
+    const [conPassValid, setconPassValid] = useState(true);
+    const [passMatchValid, setPassMatchValid] = useState(true);
 
     const createUser = (e) => {
-        e.preventDefault();
-        const newUser = { username, password, confirmPassword };
-        console.log("Welcome", newUser);
-        setHasBeenSubmitted( true );
+        if(username.length < 5){setUserValid(false);}
+        if(password.length < 8){setPassValid = false;}
+        if(confirmPassword.length < 8){setconPassValid = false;}        
+        if(confirmPassword.toLowerCase() == password.toLowerCase()){setPassMatchValid = false; console.log('here')}
+        else{
+            e.preventDefault();
+            const newUser = { username, password, confirmPassword };
+            console.log("Welcome", newUser);
+            setHasBeenSubmitted( true );
+        }
     };
 
     const formMessage = () => {
@@ -27,15 +37,15 @@ const PersonCard  = props => {
             <form onSubmit={ createUser }>
                 <div>
                     <label>Username: </label> 
-                    <input type="text" onChange={ (e) => setUsername(e.target.value) } />
+                    <input type="text" onChange={ (e) => setUsername(e.target.value)} />
                 </div>
                 <div>
                     <label>Password: </label> 
-                    <input type="text" onChange={ (e) => setPassword(e.target.value) } />
+                    <input type="text" onChange={ (e) => setPassword(e.target.value)} />
                 </div>
                 <div>
                     <label>Confirm Password: </label> 
-                    <input type="text" onChange={ (e) => setConfirmPassword(e.target.value) } />
+                    <input type="text" onChange={ (e) => setConfirmPassword(e.target.value)  } />
                 </div>
                 <input type="submit" value="Create User" />
             </form>
@@ -49,4 +59,4 @@ const PersonCard  = props => {
     );
 };
 
-export default PersonCard;
+export default Login;
