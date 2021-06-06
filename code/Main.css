@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#canvas{
+    background-color: rgb(236, 236, 236);
+}
+.Row{
+    display: flex;
+}
+#Game{
+
+}
+.top-Bar{
+    background-color: rgb(81, 193, 221);
+    height: 40px;
+    width: 640px;
+    display: flex;
+    align-items: center;
+}
+.top-Bar h2{
+    margin-left: 20px;
+}
+.top-Bar img{
+    margin-left: 10px;
+}
+#bits{
+    
+}
+
+.left-Bar{
+    background-color: rgb(81, 193, 221);
+    height: 600px;
+    width: 20px;
+}
+.right-Bar{
+    background-color: rgb(81, 193, 221);
+    height: 600px;
+    width: 20px;
+}
+.bottom-Bar{
+    background-color: rgb(120, 137, 141);
+    height: 100px;
+    width: 640px
+}
+.container{
+
+}
+.Button0{
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 80px;
+    width: 80px;
+}
